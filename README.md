@@ -1,1 +1,7 @@
-# modulo_odoo_a19luisdr
+# Módulo de Odoo (a19luisdr)
+
+## Descripción
+
+## Características
+
+## Dependencias
