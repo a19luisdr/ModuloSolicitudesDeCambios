@@ -6,7 +6,4 @@ class ChangeRequest(models.Model):
     _name = 'change.request.category'
     _description = 'Change Request Category'
 
-    name = fields.Char('Request Title', required=True)
-    date_release = fields.Date('Request Date')
-    author_id = fields.Many2one('applicant', string='Applicants')
-    category_id = fields.Many2one('library.book.category', string='Category')
+    change_request_ids = fields.One2many('change.request', 'category_id', string='Child Change Requests')

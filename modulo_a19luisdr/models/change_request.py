@@ -8,5 +8,10 @@ class ChangeRequest(models.Model):
 
     name = fields.Char('Request Title', required=True)
     date_release = fields.Date('Request Date')
-    applicant_ids = fields.Many2many('res.partner', string='Applicants')
+    applicant_id = fields.Many2one('res.partner', string='Applicants')
     category_id = fields.Many2one('change.request.category', string='Category')
+
+class ResPartner(models.Model):
+    _inherit = 'res.partner'
+
+    change_request_ids = fields.One2many('change.request', 'applicant_id', string='Published Change Requests')
