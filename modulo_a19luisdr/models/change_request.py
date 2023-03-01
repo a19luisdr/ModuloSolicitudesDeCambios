@@ -7,7 +7,9 @@ class ChangeRequest(models.Model):
     _description = 'Change Request'
 
     name = fields.Char('Request Title', required=True)
-    date_release = fields.Date('Request Date')
+    request_date = fields.Date('Request Date')
+    description = fields.Char('Request Description', required=True)
+    done = fields.Boolean('Done')
     applicant_id = fields.Many2one('res.partner', string='Applicants')
     category_id = fields.Many2one('change.request.category', string='Category')
 
