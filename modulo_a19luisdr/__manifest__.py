@@ -14,6 +14,9 @@ With this module you can manage change requests for your application in developm
     'depends': ['base'],
 
     'data': [
+        'security/groups.xml',
+        'security/ir.model.access.csv',
         'views/change_request.xml',
+        'views/change_request_category.xml',
     ],
 }
