@@ -3,7 +3,7 @@
     <record id='change_request_action' model='ir.actions.act_window'>
         <field name="name">Change Requests</field>
         <field name="res_model">change.request</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">kanban,tree,form</field>
     </record>
 
     <menuitem name="Change Request Management" id="change_request_management_base_menu" />
@@ -49,6 +49,36 @@
                 <field name="name"/>
                 <field name="applicant_id"/>
             </search>
+        </field>
+    </record>
+
+    <record id="change_request_view_kanban" model="ir.ui.view">
+        <field name="name">Change Request Kanban</field>
+        <field name="model">change.request</field>
+        <field name="arch" type="xml">
+            <kanban default_group_by="category_id" group_create="false">
+                <field name="category_id" />
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="oe_kanban_global_click">
+                            <div class="oe_kanban_content">
+                                <div class="oe_kanban_card">
+                                    <div>
+                                        <i class="fa fa-request"/>
+                                        <b>
+                                            <field name="name" />
+                                        </b>
+                                    </div>
+                                    <div class="text-muted">
+                                        <i class="fa fa-applicant"/>
+                                        <field name="applicant_id" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
         </field>
     </record>
 </odoo>

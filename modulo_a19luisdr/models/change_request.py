@@ -20,7 +20,10 @@ class ChangeRequest(models.Model):
         for request in self.filtered('request_date'):
             if request.request_date:
                 delta = today - request.request_date
-                request.days_age = delta.days
+                if delta.days > 0:
+                    request.days_age = delta.days
+                else:
+                    request.days_age = 0
             else:
                 request.days_age = 0
 
