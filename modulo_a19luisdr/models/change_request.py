@@ -27,6 +27,9 @@ class ChangeRequest(models.Model):
             else:
                 request.days_age = 0
 
+    def set_done(self):
+        self.done = True
+
 class ResPartner(models.Model):
     _inherit = 'res.partner'
 
