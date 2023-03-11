@@ -1,9 +1,11 @@
-# Módulo de Odoo (a19luisdr)
+# Módulo de solicitudes de cambios
 
-## Descripción
+## Hecho por Luís Doce Rodríguez
+
+### Descripción
 En este módulo podemos realizar solicitudes de cambios durante el desarrollo de una aplicación.
 
-## Características
+### Características
 - Visualizar las solicitudes agrupadas por la categoría a la que pertenecen.
 - Visualizar una lista con las solicitudes y los días que pasaron desde su solicitud.
 - Marcar como hecha una solicitud en su vista de formulario.
