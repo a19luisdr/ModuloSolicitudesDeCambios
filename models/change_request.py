@@ -7,7 +7,7 @@ class ChangeRequest(models.Model):
     _description = 'Change Request'
 
     name = fields.Char('Request Title', required=True)
-    request_date = fields.Date('Request Date')
+    request_date = fields.Date('Request Date', required=True)
     description = fields.Char('Request Description', required=True)
     done = fields.Boolean('Done')
     days_age = fields.Integer('Days since the request date', compute='_compute_days_age', store=False, compute_sudo=True)
