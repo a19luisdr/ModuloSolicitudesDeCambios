@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+acl_change_request,change.request_default,model_change_request,,1,0,0,0
+acl_change_request_developer,change.request_developer,model_change_request,group_developer,1,1,1,1
+acl_change_request_category,change.request.category_default,model_change_request_category,,1,0,0,0
+acl_change_request_category_developer,change.request.category_developer,model_change_request_category,group_developer,1,1,1,1
+acl_res_partner_librarian,res.partner_developer,model_res_partner,group_developer,1,1,1,1

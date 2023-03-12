@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id='change_request_action' model='ir.actions.act_window'>
+        <field name="name">Change Requests</field>
+        <field name="res_model">change.request</field>
+        <field name="view_mode">kanban,tree,form</field>
+    </record>
+
+    <menuitem name="Change Request Management" id="change_request_management_base_menu" />
+    <menuitem name="Change Requests" id="change_request_menu" parent="change_request_management_base_menu" action="change_request_action"/>
+
+    <record id="change_request_view_form" model="ir.ui.view">
+        <field name="name">Change Request Form</field>
+        <field name="model">change.request</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button name="set_done" string="Set Done" type="object"/>
+                </header>
+                <group>
+                    <group>
+                        <field name="name"/>
+                        <field name="category_id"/>
+                        <field name="applicant_id"/>
+                    </group>
+                    <group>
+                        <field name="description"/>
+                        <field name="request_date"/>
+                        <field name="done"/>
+                    </group>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record id="change_request_view_tree" model="ir.ui.view">
+        <field name="name">Change Request List</field>
+        <field name="model">change.request</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="days_age"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="change_request_view_search" model="ir.ui.view">
+        <field name="name">Change Request Search</field>
+        <field name="model">change.request</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <field name="applicant_id"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="change_request_view_kanban" model="ir.ui.view">
+        <field name="name">Change Request Kanban</field>
+        <field name="model">change.request</field>
+        <field name="arch" type="xml">
+            <kanban default_group_by="category_id" group_create="false">
+                <field name="category_id" />
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="oe_kanban_global_click">
+                            <div class="oe_kanban_content">
+                                <div class="oe_kanban_card">
+                                    <div>
+                                        <i class="fa fa-request"/>
+                                        <b>
+                                            <field name="name" />
+                                        </b>
+                                    </div>
+                                    <div class="text-muted">
+                                        <i class="fa fa-applicant"/>
+                                        <field name="applicant_id" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+</odoo>
