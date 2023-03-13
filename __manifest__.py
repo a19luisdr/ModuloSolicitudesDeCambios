@@ -12,6 +12,7 @@ With this module you can manage change requests for your application in developm
     'category': 'Tools',
     'version': '14.0.1',
     'depends': ['base'],
+    'application': True,
 
     'data': [
         'security/groups.xml',
